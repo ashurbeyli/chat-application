@@ -3,6 +3,7 @@ import React from 'react';
 import './App.css';
 
 import MessageList from '../MessageList/index';
+import MessageForm from '../MessageForm/index';
 
 class App extends React.Component {
   render () {
@@ -12,12 +13,7 @@ class App extends React.Component {
           <MessageList/>
         </div>
         <div className="footer">
-          <div className="block-container">
-            <form className="send-form">
-              <input type="text" className="send-form__textInput" placeholder="Message" />
-              <button className="send-form__sendButton">Send</button>
-            </form>
-          </div>
+          <MessageForm/>
         </div>
       </div>
     );

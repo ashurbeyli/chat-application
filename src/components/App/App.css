@@ -1,27 +1,3 @@
-.send-form {
-    padding: 8px;
-}
-.send-form__textInput {
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
-    border: none;
-    min-height: 34px;
-    text-indent: 8px;
-    width: calc(100% - 66px);
-}
-.send-form__sendButton {
-    background: #ff866d;
-    border: none;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
-    color: white;
-    float: right;
-    height: 34px;
-    width: 58px;
-}
-
 .footer {
     background: #3797d4;
     min-height: 50px;
