@@ -1,0 +1,1 @@
+export const SET_MESSAGES = 'GET_MESSAGES';
