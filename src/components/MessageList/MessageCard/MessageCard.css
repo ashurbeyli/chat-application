@@ -1,0 +1,33 @@
+.messages-list__card {
+    background: white;
+    border: 1px solid #e3e7e8;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    clear: right;
+    display: inline-block;
+    margin-bottom: 16px;
+    max-width: 80%;
+    padding: 16px;
+    white-space: pre-line;
+}
+.messages-list__card--right {
+    background: #fcf6c6;
+    float: right;
+}
+.messages-list__card-holder {
+    color: #a6acb1;
+    font-weight: 400;
+}
+.messages-list__card > p {
+    font-weight: 500;
+    margin: 5px 0;
+}
+.messages-list__datetime {
+    color: #cad0d5;
+    font-size: 11px;
+    font-weight: 400;
+}
+.messages-list__card--right > .messages-list__datetime {
+    float: right;
+}

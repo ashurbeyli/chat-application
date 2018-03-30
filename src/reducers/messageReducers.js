@@ -1,14 +1,11 @@
 import { SET_MESSAGES } from '../types/messageTypes';
 
-const initState = {
-  messages: []
-};
-
-export default (state = initState, action) => {
+const messages = (state = [], action) => {
   switch (action.type) {
     case SET_MESSAGES:
-      return { ...state, messages: action.messages };
+      return action.messages;
     default:
       return state;
   }
 };
+export default messages;
