@@ -5,7 +5,7 @@ import './App.css';
 import MessageList from '../MessageList/index';
 import MessageForm from '../MessageForm/index';
 
-class App extends React.Component {
+export class App extends React.Component {
   render () {
     return (
       <div>
