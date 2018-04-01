@@ -1,7 +1,11 @@
 import React from 'react';
+import { connect } from 'react-redux';
+
+import API from '../../api/';
+import { addMessage } from '../../actions/messageActions';
 
 import './MessageForm.css';
-import config from '../../config';
+
 
 const CURRENT_AUTHOR = 'Tom';
 
@@ -17,17 +21,12 @@ class MessageForm extends React.Component {
   handleSubmit = (e) => {
     e.preventDefault();
     if (this.isValid()) {
-      // send post request
-      fetch(config.API_URL, {
-        method: 'post',
-        body: JSON.stringify(this.state)
-      }).then(function(response) {
-        return response.json();
-      }).then(function(data) {
-        console.log(data);
-      });
-      // make empty message field
-      this.setState({ message: ''});
+      API.saveMessage(this.state)
+        .then((data) => {
+          this.props.addMessage(data);
+          this.setState({ message: ''});
+        })
+        .catch((err) => console.error((err)));
     }
   }
   handleInputChange = (e) => {
@@ -36,7 +35,8 @@ class MessageForm extends React.Component {
     this.setState(state);
   }
   isValid = () => {
-    return this.state.message;
+    //@TODO do some validation here
+    return this.state.message !== '';
   }
   render () {
     const { message } = this.state;
@@ -48,6 +48,7 @@ class MessageForm extends React.Component {
           onSubmit={this.handleSubmit}
         >
           <input
+            autoComplete="off"
             className="send-form__textInput"
             name="message"
             onChange={this.handleInputChange}
@@ -61,4 +62,5 @@ class MessageForm extends React.Component {
     );
   }
 }
-export default MessageForm;
+
+export default connect(null, { addMessage })(MessageForm);

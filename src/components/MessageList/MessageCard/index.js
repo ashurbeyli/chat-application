@@ -1,6 +1,8 @@
 import React from 'react';
+import Moment from 'react-moment';
 
 import './MessageCard.css';
+
 
 const CURRENT_AUTHOR = 'Tom';
 
@@ -17,12 +19,20 @@ const MessageCard = ({ data }) => {
     return author !== CURRENT_AUTHOR;
   };
 
+  const filterTimestamp = () => {
+    return Number(timestamp);
+  };
+
   return (
     <div>
       <div className={'messages-list__card ' + modifyCardForCurrentAuthor() }>
         { showAuthorName() ? <span className="messages-list__card-holder">{author}</span> : ''}
         <p>{message}</p>
-        <span className="messages-list__datetime">{timestamp}</span>
+        <span className="messages-list__datetime">
+          <Moment format="DD MMM YYYY hh:mm">
+            {filterTimestamp()}
+          </Moment>
+        </span>
       </div>
       <div className="clearfix"/>
     </div>

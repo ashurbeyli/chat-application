@@ -1,9 +1,9 @@
-import { SET_MESSAGES } from '../types/messageTypes';
+import { LOAD_MESSAGES } from '../types/messageTypes';
 import { ADD_MESSAGE } from '../types/messageTypes';
 
-export const setMessages = (messages) => {
+export const loadMessages = (messages) => {
   return {
-    type: SET_MESSAGES,
+    type: LOAD_MESSAGES,
     messages
   };
 };

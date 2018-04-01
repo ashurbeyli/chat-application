@@ -1,15 +1,24 @@
 import React from 'react';
-import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+
+import API from '../../api/';
+import MessageCard from './MessageCard';
+import { loadMessages } from '../../actions/messageActions';
 
 import './MessageList.css';
 
-import { prepareFetchUrl } from '../../config';
-
-import MessageCard from './MessageCard';
-import { setMessages } from '../../actions/messageActions';
 
 class MessageList extends React.Component {
+  componentDidUpdate() {
+    this.scrollToBottom();
+  }
+  scrollToBottom() {
+    const messageList = document.getElementById('messageList');
+    const scrollHeight = messageList.scrollHeight;
+    const height = messageList.clientHeight;
+    messageList.scrollTop = scrollHeight - height;
+  }
+
   componentDidMount() {
     if (this.props.messages.length === 0) {
       this.fetchMessages();
@@ -19,10 +28,10 @@ class MessageList extends React.Component {
     let timestamp = (this.props.messages.length)
       ? this.getLastMessageTimestamp()
       : false;
-
-    fetch(prepareFetchUrl({ timestamp }))
-      .then((res) => res.json())
-      .then((json) => this.props.setMessages(json));
+    //
+    API.getMessages({ timestamp })
+      .then((res) => this.props.loadMessages(res))
+      .catch((err) => console.error(err));
   }
   getLastMessageTimestamp() {
     return this.props.messages.pop().timestamp;
@@ -30,7 +39,7 @@ class MessageList extends React.Component {
 
   render () {
     return (
-      <div className="messages-list">
+      <div className="message-list" id="messageList">
         {
           this.props.messages.map( (message) => {
             return <MessageCard key={message._id} data={message} />;
@@ -45,8 +54,5 @@ class MessageList extends React.Component {
 const mapStateToProps = (state) => {
   return { messages: state.messages };
 };
-const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators({ setMessages }, dispatch);
-};
 
-export default connect(mapStateToProps, mapDispatchToProps)(MessageList);
+export default connect(mapStateToProps, { loadMessages })(MessageList);

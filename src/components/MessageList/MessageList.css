@@ -1,3 +1,7 @@
-.messages-list {
-    padding: 16px 24px;
+.message-list {
+    max-width: 640px;
+    max-height: 100%;
+    overflow: auto;
+    position: absolute;
+    padding: 16px 24px 50px 24px;
 }
