@@ -7,8 +7,9 @@ import { loadMessages } from '../../actions/messageActions';
 
 import './MessageList.css';
 
+const CURRENT_AUTHOR = 'Tom';
 
-class MessageList extends React.Component {
+export class MessageList extends React.Component {
   componentDidUpdate() {
     this.scrollToBottom();
   }
@@ -42,7 +43,7 @@ class MessageList extends React.Component {
       <div className="message-list" id="messageList">
         {
           this.props.messages.map( (message) => {
-            return <MessageCard key={message._id} data={message} />;
+            return <MessageCard key={message._id} data={message} user={CURRENT_AUTHOR} />;
           })
         }
       </div>

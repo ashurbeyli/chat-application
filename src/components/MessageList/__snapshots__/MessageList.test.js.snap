@@ -1,0 +1,194 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MessageList renders correctly 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <MessageList
+    messages={
+        Array [
+            Object {
+              "_id": "5abe20c45d4b5600196c67b8",
+              "author": "Ninja",
+              "message": "Hello world",
+              "timestamp": 1522409668934,
+              "token": "sySt29CMMLV4",
+            },
+            Object {
+              "_id": "5abe21a95d4b5600196c67b9",
+              "author": "martin57",
+              "message": "Thanks Peter",
+              "timestamp": 1522409897141,
+              "token": "sySt29CMMLV4",
+            },
+          ]
+    }
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <Unknown
+          data={
+                    Object {
+                              "_id": "5abe20c45d4b5600196c67b8",
+                              "author": "Ninja",
+                              "message": "Hello world",
+                              "timestamp": 1522409668934,
+                              "token": "sySt29CMMLV4",
+                            }
+          }
+          user="Tom"
+/>,
+        <Unknown
+          data={
+                    Object {
+                              "_id": "5abe21a95d4b5600196c67b9",
+                              "author": "martin57",
+                              "message": "Thanks Peter",
+                              "timestamp": 1522409897141,
+                              "token": "sySt29CMMLV4",
+                            }
+          }
+          user="Tom"
+/>,
+      ],
+      "className": "message-list",
+      "id": "messageList",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": "5abe20c45d4b5600196c67b8",
+        "nodeType": "function",
+        "props": Object {
+          "data": Object {
+            "_id": "5abe20c45d4b5600196c67b8",
+            "author": "Ninja",
+            "message": "Hello world",
+            "timestamp": 1522409668934,
+            "token": "sySt29CMMLV4",
+          },
+          "user": "Tom",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": "5abe21a95d4b5600196c67b9",
+        "nodeType": "function",
+        "props": Object {
+          "data": Object {
+            "_id": "5abe21a95d4b5600196c67b9",
+            "author": "martin57",
+            "message": "Thanks Peter",
+            "timestamp": 1522409897141,
+            "token": "sySt29CMMLV4",
+          },
+          "user": "Tom",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <Unknown
+            data={
+                        Object {
+                                    "_id": "5abe20c45d4b5600196c67b8",
+                                    "author": "Ninja",
+                                    "message": "Hello world",
+                                    "timestamp": 1522409668934,
+                                    "token": "sySt29CMMLV4",
+                                  }
+            }
+            user="Tom"
+/>,
+          <Unknown
+            data={
+                        Object {
+                                    "_id": "5abe21a95d4b5600196c67b9",
+                                    "author": "martin57",
+                                    "message": "Thanks Peter",
+                                    "timestamp": 1522409897141,
+                                    "token": "sySt29CMMLV4",
+                                  }
+            }
+            user="Tom"
+/>,
+        ],
+        "className": "message-list",
+        "id": "messageList",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": "5abe20c45d4b5600196c67b8",
+          "nodeType": "function",
+          "props": Object {
+            "data": Object {
+              "_id": "5abe20c45d4b5600196c67b8",
+              "author": "Ninja",
+              "message": "Hello world",
+              "timestamp": 1522409668934,
+              "token": "sySt29CMMLV4",
+            },
+            "user": "Tom",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": "5abe21a95d4b5600196c67b9",
+          "nodeType": "function",
+          "props": Object {
+            "data": Object {
+              "_id": "5abe21a95d4b5600196c67b9",
+              "author": "martin57",
+              "message": "Thanks Peter",
+              "timestamp": 1522409897141,
+              "token": "sySt29CMMLV4",
+            },
+            "user": "Tom",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

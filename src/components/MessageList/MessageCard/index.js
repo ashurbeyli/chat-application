@@ -3,20 +3,21 @@ import Moment from 'react-moment';
 
 import './MessageCard.css';
 
-
-const CURRENT_AUTHOR = 'Tom';
-
-const MessageCard = ({ data }) => {
+export const MessageCard = ({ data, user }) => {
   const { message, author, timestamp } = data;
 
-  // checking if message author is logged in author
+  // float message-card to right if message author is logged in user
   const modifyCardForCurrentAuthor = () => {
-    return (author === CURRENT_AUTHOR) ? 'messages-list__card--right' : '';
+    return checkAuthorIsCurrent() ? 'messages-list__card--right' : '';
+  };
+
+  const checkAuthorIsCurrent = () => {
+    return author === user;
   };
 
   // if author is CURRENT_AUTHOR need to not show author name
   const showAuthorName = () => {
-    return author !== CURRENT_AUTHOR;
+    return author !== user;
   };
 
   const filterTimestamp = () => {

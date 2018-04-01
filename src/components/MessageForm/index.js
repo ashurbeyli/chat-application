@@ -9,7 +9,7 @@ import './MessageForm.css';
 
 const CURRENT_AUTHOR = 'Tom';
 
-class MessageForm extends React.Component {
+export class MessageForm extends React.Component {
   constructor () {
     super();
 
